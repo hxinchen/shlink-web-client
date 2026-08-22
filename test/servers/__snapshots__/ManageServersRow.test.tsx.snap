@@ -61,7 +61,7 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
             class="relative inline-block"
           >
             <button
-              aria-controls="_r_o_"
+              aria-controls="_r_s_"
               aria-expanded="false"
               aria-haspopup="true"
               aria-label="Options"
@@ -83,6 +83,7 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
               </svg>
             </button>
           </div>
+          <div />
         </td>
       </tr>
     </tbody>
@@ -136,7 +137,7 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
             class="relative inline-block"
           >
             <button
-              aria-controls="_r_t_"
+              aria-controls="_r_12_"
               aria-expanded="false"
               aria-haspopup="true"
               aria-label="Options"
@@ -158,6 +159,7 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
               </svg>
             </button>
           </div>
+          <div />
         </td>
       </tr>
     </tbody>

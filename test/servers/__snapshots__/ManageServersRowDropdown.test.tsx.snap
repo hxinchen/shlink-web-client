@@ -6,7 +6,7 @@ exports[`<ManageServersRowDropdown /> > renders expected size and icon 1`] = `
     class="relative inline-block"
   >
     <button
-      aria-controls="_r_1v_"
+      aria-controls="_r_29_"
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Options"
@@ -28,6 +28,7 @@ exports[`<ManageServersRowDropdown /> > renders expected size and icon 1`] = `
       </svg>
     </button>
   </div>
+  <div />
 </div>
 `;
 
@@ -37,7 +38,7 @@ exports[`<ManageServersRowDropdown /> > renders expected size and icon 2`] = `
     class="relative inline-block"
   >
     <button
-      aria-controls="_r_23_"
+      aria-controls="_r_2e_"
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Options"
@@ -59,5 +60,6 @@ exports[`<ManageServersRowDropdown /> > renders expected size and icon 2`] = `
       </svg>
     </button>
   </div>
+  <div />
 </div>
 `;
