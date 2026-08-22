@@ -30,9 +30,9 @@ export const Home: FC = withoutSelectedServer(() => {
     <div className="px-3 w-full">
       <Card className="mx-auto max-w-[900px] overflow-hidden">
         <div className="flex flex-col md:flex-row">
-          <div className="p-10 hidden md:flex items-center w-[38%] bg-lm-main dark:bg-dm-main text-white">
+          <div className="p-10 hidden md:flex items-center w-[38%] bg-lm-active dark:bg-dm-active text-lm-brand dark:text-dm-brand">
             <div className="w-full">
-              <ShlinkLogo />
+              <ShlinkLogo color="currentColor" />
             </div>
           </div>
 

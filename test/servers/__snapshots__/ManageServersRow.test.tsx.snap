@@ -9,14 +9,14 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
       class="hidden lg:table-header-group"
     >
       <tr
-        class="group lg:table-row flex flex-col lg:border-0 border-y-2 border-lm-border dark:border-dm-border"
+        class="group lg:table-row flex flex-col lg:border-0 border-y border-lm-table-border dark:border-dm-table-border"
       />
     </thead>
     <tbody
       class="lg:table-row-group flex flex-col gap-y-3"
     >
       <tr
-        class="group lg:table-row flex flex-col lg:border-0 border-y-2 border-lm-border dark:border-dm-border hover:bg-lm-table-highlight dark:hover:bg-dm-table-highlight transition-colors duration-[160ms] group-[&]/card:hover:bg-lm-secondary dark:group-[&]/card:hover:bg-dm-secondary relative"
+        class="group lg:table-row flex flex-col lg:border-0 border-y border-lm-table-border dark:border-dm-table-border hover:bg-lm-table-highlight dark:hover:bg-dm-table-highlight transition-colors duration-[160ms] group-[&]/card:hover:bg-lm-secondary dark:group-[&]/card:hover:bg-dm-secondary relative"
       >
         <td
           class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1"
@@ -100,14 +100,14 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
       class="hidden lg:table-header-group"
     >
       <tr
-        class="group lg:table-row flex flex-col lg:border-0 border-y-2 border-lm-border dark:border-dm-border"
+        class="group lg:table-row flex flex-col lg:border-0 border-y border-lm-table-border dark:border-dm-table-border"
       />
     </thead>
     <tbody
       class="lg:table-row-group flex flex-col gap-y-3"
     >
       <tr
-        class="group lg:table-row flex flex-col lg:border-0 border-y-2 border-lm-border dark:border-dm-border hover:bg-lm-table-highlight dark:hover:bg-dm-table-highlight transition-colors duration-[160ms] group-[&]/card:hover:bg-lm-secondary dark:group-[&]/card:hover:bg-dm-secondary relative"
+        class="group lg:table-row flex flex-col lg:border-0 border-y border-lm-table-border dark:border-dm-table-border hover:bg-lm-table-highlight dark:hover:bg-dm-table-highlight transition-colors duration-[160ms] group-[&]/card:hover:bg-lm-secondary dark:group-[&]/card:hover:bg-dm-secondary relative"
       >
         <td
           class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1"

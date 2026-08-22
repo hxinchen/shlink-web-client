@@ -54,7 +54,7 @@ const ManageServersBase: FC<ManageServersProps> = withoutSelectedServer(
           </Button>
         </div>
 
-        <SimpleCard className="card overflow-hidden" bodyClassName="p-0">
+        <SimpleCard className="overflow-hidden" bodyClassName="p-0">
           <Table
             header={
               <Table.Row>

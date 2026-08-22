@@ -16,7 +16,7 @@ const LanguageSwitcher: FC = () => {
   return (
     <select
       aria-label="Language"
-      className="bg-white/10 text-white text-sm border border-white/20 rounded-md px-2 py-1.5 cursor-pointer [&>option]:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
+      className="bg-lm-secondary dark:bg-dm-active text-lm-text dark:text-dm-text text-sm border border-lm-border dark:border-dm-border rounded-md px-2 py-1.5 cursor-pointer [&>option]:text-lm-text dark:[&>option]:bg-dm-primary dark:[&>option]:text-dm-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lm-brand/70 dark:focus-visible:outline-dm-brand/70"
       value={current}
       onChange={(e) => setSettings({ ui: { ...settings.ui!, language: e.target.value as 'zh-CN' | 'en' } })}
     >
@@ -37,9 +37,12 @@ export const MainHeader: FC = () => {
       className="[&]:fixed top-0 z-900 [&]:min-h-(--header-height)"
       brand={
         <div className="flex items-center gap-4">
-          <Link to="/" className="[&]:text-white no-underline flex items-center gap-2">
-            <ShlinkLogo className="w-8" color="white" />
-            <span className="font-semibold tracking-wide">Quarks Click</span>
+          <Link
+            to="/"
+            className="[&]:text-lm-brand dark:[&]:text-dm-brand no-underline flex items-center gap-2"
+          >
+            <ShlinkLogo className="w-8" color="currentColor" />
+            <span className="font-semibold tracking-wide text-lm-text dark:text-dm-text">Quarks Click</span>
           </Link>
           <LanguageSwitcher />
         </div>
