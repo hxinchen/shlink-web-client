@@ -32,10 +32,10 @@ describe('<ShlinkWebComponentContainer />', () => {
   });
 
   it.each([
-    [fromPartial<NotFoundServer>({ serverNotFound: true }), 'Could not find this Shlink server.'],
+    [fromPartial<NotFoundServer>({ serverNotFound: true }), 'Could not find this server.'],
     [
       fromPartial<NonReachableServer>({ id: 'foo', serverNotReachable: true }),
-      /Could not connect to this Shlink server/,
+      /Could not connect to this server/,
     ],
   ])('shows error for non reachable servers', async (selectedServer, expectedError) => {
     const screen = await setUp(selectedServer);

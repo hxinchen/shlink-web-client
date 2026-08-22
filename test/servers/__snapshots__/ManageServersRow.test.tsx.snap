@@ -16,7 +16,7 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
       class="lg:table-row-group flex flex-col gap-y-3"
     >
       <tr
-        class="group lg:table-row flex flex-col lg:border-0 border-y-2 border-lm-border dark:border-dm-border hover:bg-lm-primary dark:hover:bg-dm-primary group-[&]/card:hover:bg-lm-secondary dark:group-[&]/card:hover:bg-dm-secondary relative"
+        class="group lg:table-row flex flex-col lg:border-0 border-y-2 border-lm-border dark:border-dm-border hover:bg-lm-table-highlight dark:hover:bg-dm-table-highlight transition-colors duration-[160ms] group-[&]/card:hover:bg-lm-secondary dark:group-[&]/card:hover:bg-dm-secondary relative"
       >
         <td
           class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1"
@@ -65,7 +65,7 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
               aria-expanded="false"
               aria-haspopup="true"
               aria-label="Options"
-              class="flex items-center rounded-md focus-ring cursor-pointer border border-lm-border dark:border-dm-border bg-lm-primary dark:bg-dm-primary group-[&]/card:bg-lm-input group-[&]/card:dark:bg-dm-input px-3 py-1.5 gap-x-2"
+              class="flex items-center rounded-md focus-ring transition-[background-color,border-color,color,box-shadow] duration-[160ms] cursor-pointer border border-lm-border dark:border-dm-border bg-lm-primary dark:bg-dm-primary group-[&]/card:bg-lm-input group-[&]/card:dark:bg-dm-input px-3.5 py-2 gap-x-2"
               type="button"
             >
               <svg
@@ -106,7 +106,7 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
       class="lg:table-row-group flex flex-col gap-y-3"
     >
       <tr
-        class="group lg:table-row flex flex-col lg:border-0 border-y-2 border-lm-border dark:border-dm-border hover:bg-lm-primary dark:hover:bg-dm-primary group-[&]/card:hover:bg-lm-secondary dark:group-[&]/card:hover:bg-dm-secondary relative"
+        class="group lg:table-row flex flex-col lg:border-0 border-y-2 border-lm-border dark:border-dm-border hover:bg-lm-table-highlight dark:hover:bg-dm-table-highlight transition-colors duration-[160ms] group-[&]/card:hover:bg-lm-secondary dark:group-[&]/card:hover:bg-dm-secondary relative"
       >
         <td
           class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1"
@@ -140,7 +140,7 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
               aria-expanded="false"
               aria-haspopup="true"
               aria-label="Options"
-              class="flex items-center rounded-md focus-ring cursor-pointer border border-lm-border dark:border-dm-border bg-lm-primary dark:bg-dm-primary group-[&]/card:bg-lm-input group-[&]/card:dark:bg-dm-input px-3 py-1.5 gap-x-2"
+              class="flex items-center rounded-md focus-ring transition-[background-color,border-color,color,box-shadow] duration-[160ms] cursor-pointer border border-lm-border dark:border-dm-border bg-lm-primary dark:bg-dm-primary group-[&]/card:bg-lm-input group-[&]/card:dark:bg-dm-input px-3.5 py-2 gap-x-2"
               type="button"
             >
               <svg

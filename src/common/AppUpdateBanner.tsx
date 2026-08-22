@@ -4,6 +4,7 @@ import { Button, Card, CloseButton, useToggle } from '@shlinkio/shlink-frontend-
 import { clsx } from 'clsx';
 import type { FC } from 'react';
 import { useCallback } from 'react';
+import { useTranslation } from '../i18n/useTranslation';
 
 interface AppUpdateBannerProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ interface AppUpdateBannerProps {
 
 export const AppUpdateBanner: FC<AppUpdateBannerProps> = ({ isOpen, onClose, forceUpdate }) => {
   const { flag: isUpdating, setToTrue: setUpdating } = useToggle();
+  const { t } = useTranslation();
   const update = useCallback(() => {
     setUpdating();
     forceUpdate();
@@ -28,18 +30,18 @@ export const AppUpdateBanner: FC<AppUpdateBannerProps> = ({ isOpen, onClose, for
       className={clsx('w-[700px] max-w-[calc(100%-30px)]', 'fixed top-[35px] left-[50%] translate-x-[-50%] z-[1040]')}
     >
       <Card.Header className="flex items-center justify-between">
-        <h5>This app has just been updated!</h5>
+        <h5>{t('This app has just been updated!')}</h5>
         <CloseButton onClick={onClose} />
       </Card.Header>
       <Card.Body className="flex gap-4 items-center justify-between max-md:flex-col">
-        Restart it to enjoy the new features.
+        {t('Restart it to enjoy the new features.')}
         <Button disabled={isUpdating} variant="secondary" solid onClick={update}>
           {!isUpdating && (
             <>
-              Restart now <FontAwesomeIcon icon={reloadIcon} />
+              {t('Restart now')} <FontAwesomeIcon icon={reloadIcon} />
             </>
           )}
-          {isUpdating && <>Restarting...</>}
+          {isUpdating && <>{t('Restarting...')}</>}
         </Button>
       </Card.Body>
     </Card>

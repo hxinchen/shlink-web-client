@@ -1,0 +1,38 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - heading [level=4] [ref=e6]:
+      - generic [ref=e7]:
+        - link "Quarks Click" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - combobox "Language" [ref=e14] [cursor=pointer]:
+          - option "简体中文" [selected]
+          - option "English"
+    - menu "显示菜单" [ref=e15]:
+      - menuitem [ref=e16]:
+        - link "设置" [ref=e17] [cursor=pointer]:
+          - /url: /settings
+      - menuitem [ref=e20]:
+        - button "服务器" [ref=e22] [cursor=pointer]
+  - generic [ref=e28]:
+    - generic [ref=e48]:
+      - heading [level=3] [ref=e51]:
+        - paragraph [ref=e52]: 抱歉！无法连接到该服务器。
+        - text: 请确认网络连接正常，并且该服务器已正确配置且处于在线状态。
+      - paragraph [ref=e53]:
+        - text: 以下是当前已配置的服务器。请选择其中一个，或
+        - link "添加新的服务器" [ref=e54] [cursor=pointer]:
+          - /url: /server/create
+        - text: .
+      - link "Quarks Click" [ref=e57] [cursor=pointer]:
+        - /url: /server/quarks-click-quarks.click
+      - paragraph [ref=e61]:
+        - text: 或者，如果你认为该服务器配置有误，可以
+        - button "移除它" [ref=e62]
+        - text: 或
+        - link "编辑它" [ref=e63] [cursor=pointer]:
+          - /url: /server/quarks-click-quarks.click/edit?reconnect=true
+        - text: .
+    - generic [ref=e40]:
+      - text: "客户端:"
+      - link "latest" [ref=e41] [cursor=pointer]:
+        - /url: https://github.com/shlinkio/shlink-web-client/releases/latest

@@ -1,0 +1,68 @@
+- generic [ref=f2e3]:
+  - navigation [ref=f2e4]:
+    - heading [level=4] [ref=f2e6]:
+      - generic [ref=f2e7]:
+        - link "Quarks Click" [ref=f2e8] [cursor=pointer]:
+          - /url: /
+        - combobox "Language" [ref=f2e14] [cursor=pointer]:
+          - option "简体中文" [selected]
+          - option "English"
+    - menu "显示菜单" [ref=f2e15]:
+      - menuitem [ref=f2e16]:
+        - link "设置" [ref=f2e17] [cursor=pointer]:
+          - /url: /settings
+      - menuitem [ref=f2e20]:
+        - button "服务器" [ref=f2e22] [cursor=pointer]
+  - generic [ref=f2e28]:
+    - generic [ref=f2e72]:
+      - complementary [ref=f2e73]:
+        - navigation [ref=f2e74]:
+          - link "概览" [ref=f2e75] [cursor=pointer]:
+            - /url: /server/quarks-click-localhost-3001/overview
+          - link "短链列表" [ref=f2e78] [cursor=pointer]:
+            - /url: /server/quarks-click-localhost-3001/list-short-urls/1
+          - link "创建短链" [ref=f2e81] [cursor=pointer]:
+            - /url: /server/quarks-click-localhost-3001/create-short-url
+          - link "标签管理" [ref=f2e84] [cursor=pointer]:
+            - /url: /server/quarks-click-localhost-3001/manage-tags
+          - link "域名管理" [ref=f2e87] [cursor=pointer]:
+            - /url: /server/quarks-click-localhost-3001/manage-domains
+      - generic [ref=f2e279]:
+        - banner [ref=f2e280]:
+          - generic [ref=f2e282]:
+            - heading [level=2] [ref=f2e283]:
+              - button "Go back" [ref=f2e284] [cursor=pointer]
+              - generic [ref=f2e288]:
+                - text: 访问统计：
+                - link "https://quarks.click/quarks-ui-check" [ref=f2e289] [cursor=pointer]:
+                  - /url: https://quarks.click/quarks-ui-check
+              - generic [ref=f2e290]:
+                - text: 访问：
+                - strong [ref=f2e292]: "0"
+            - generic [ref=f2e293]:
+              - separator [ref=f2e294]
+              - generic [ref=f2e295]:
+                - text: 创建于：
+                - time [ref=f2e298]: 1 分钟前
+              - generic [ref=f2e299]:
+                - text: "原始链接:"
+                - link "https://example.com/" [ref=f2e300] [cursor=pointer]:
+                  - /url: https://example.com/
+        - generic [ref=f2e302]:
+          - button "最近 30 天" [ref=f2e305] [cursor=pointer]
+          - button "更多" [ref=f2e309] [cursor=pointer]
+        - generic [ref=f2e313]:
+          - menubar [ref=f2e314]:
+            - menuitem "By time" [ref=f2e315] [cursor=pointer]
+            - menuitem "By context" [ref=f2e318] [cursor=pointer]
+            - menuitem "By location" [ref=f2e321] [cursor=pointer]
+            - menuitem "List" [ref=f2e324] [cursor=pointer]
+            - menuitem "操作" [ref=f2e327] [cursor=pointer]
+          - heading "没有符合当前筛选条件的访问" [level=3] [ref=f2e332]
+    - generic [ref=f2e57]:
+      - text: "服务端:"
+      - link "v5.1.5" [ref=f2e159] [cursor=pointer]:
+        - /url: https://github.com/shlinkio/shlink/releases/v5.1.5
+      - text: "- 客户端:"
+      - link "latest" [ref=f2e58] [cursor=pointer]:
+        - /url: https://github.com/shlinkio/shlink-web-client/releases/latest

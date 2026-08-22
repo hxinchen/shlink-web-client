@@ -5,6 +5,7 @@ import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { NoMenuLayout } from '../common/NoMenuLayout';
 import { withDependencies } from '../container/context';
+import { useTranslation } from '../i18n/useTranslation';
 import { useGoBack } from '../utils/helpers/hooks';
 import type { ServerData } from './data';
 import { ensureUniqueIds } from './helpers';
@@ -20,19 +21,24 @@ export type CreateServerProps = {
   useTimeoutToggle: TimeoutToggle;
 };
 
-const ImportResult = ({ variant }: Pick<ResultProps, 'variant'>) => (
-  <div className="mt-4">
-    <Result variant={variant}>
-      {variant === 'success' && 'Servers properly imported. You can now select one from the list :)'}
-      {variant === 'error' && 'The servers could not be imported. Make sure the format is correct.'}
-    </Result>
-  </div>
-);
+const ImportResult = ({ variant }: Pick<ResultProps, 'variant'>) => {
+  const { t } = useTranslation();
+
+  return (
+    <div className="mt-4">
+      <Result variant={variant}>
+        {variant === 'success' && t('Servers properly imported. You can now select one from the list :)')}
+        {variant === 'error' && t('The servers could not be imported. Make sure the format is correct.')}
+      </Result>
+    </div>
+  );
+};
 
 const CreateServerBase: FC<CreateServerProps> = withoutSelectedServer(({ useTimeoutToggle }) => {
   const { servers, createServers } = useServers();
   const navigate = useNavigate();
   const goBack = useGoBack();
+  const { t } = useTranslation();
   const hasServers = !!Object.keys(servers).length;
   const [serversImported, setServersImported] = useTimeoutToggle({ delay: SHOW_IMPORT_MSG_TIME });
   const [errorImporting, setErrorImporting] = useTimeoutToggle({ delay: SHOW_IMPORT_MSG_TIME });
@@ -66,16 +72,16 @@ const CreateServerBase: FC<CreateServerProps> = withoutSelectedServer(({ useTime
 
   return (
     <NoMenuLayout>
-      <ServerForm title="Add new server" onSubmit={onSubmit}>
+      <ServerForm title={t('Add new server')} onSubmit={onSubmit}>
         {!hasServers && (
           <ImportServersBtn tooltipPlacement="top" onImport={setServersImported} onError={setErrorImporting} />
         )}
         {hasServers && (
           <Button variant="secondary" onClick={goBack}>
-            Cancel
+            {t('Cancel')}
           </Button>
         )}
-        <Button type="submit">Create server</Button>
+        <Button type="submit">{t('Create server')}</Button>
       </ServerForm>
 
       {serversImported && <ImportResult variant="success" />}

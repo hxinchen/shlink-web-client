@@ -17,6 +17,7 @@ import { useSettings } from '../settings/reducers/settings';
 import { Settings } from '../settings/Settings';
 import { forceUpdate } from '../utils/helpers/sw';
 import { useAppUpdated } from './reducers/appUpdates';
+import { changeLanguage, DEFAULT_LANGUAGE } from '../i18n';
 
 export const App: FC = () => {
   const { appUpdated, resetAppUpdate } = useAppUpdated();
@@ -30,9 +31,12 @@ export const App: FC = () => {
   useEffect(() => {
     changeThemeInMarkup(settings.ui?.theme ?? getSystemPreferredTheme());
   }, [settings.ui?.theme]);
+  useEffect(() => {
+    changeLanguage(settings.ui?.language ?? DEFAULT_LANGUAGE);
+  }, [settings.ui?.language]);
 
   return (
-    <div className="h-full">
+    <div className="h-full selection:bg-lm-brand/20 dark:selection:bg-dm-brand/25">
       <>
         <MainHeader />
 
@@ -63,7 +67,7 @@ export const App: FC = () => {
             </Routes>
           </div>
 
-          <div className="h-(--footer-height) mt-(--footer-margin) md:px-4">
+          <div className="h-(--footer-height) mt-(--footer-margin) md:px-5 opacity-75">
             <ShlinkVersionsContainer />
           </div>
         </div>

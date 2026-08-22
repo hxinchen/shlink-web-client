@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light">
+<title>Quarks Click API 文档</title>
+<style>
+:root{--bg:#0b0d10;--surface:#14181d;--line:#2b333d;--text:#f4f7fb;--muted:#a7b0bc;--blue:#65a8ff;--green:#67d6a0;--yellow:#f1c76b;--red:#ff8b8b;--field:#cfe2ff;--inline-bg:#080b0f;--inline-text:#d7e7ff;--button-bg:#1a222b;--button-text:#e7eef7;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;--mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 var(--sans)}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.layout{display:grid;grid-template-columns:230px minmax(0,820px) 180px;gap:38px;max-width:1380px;margin:auto;padding:30px 26px 70px}aside,.toc{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow:auto}.brand{display:flex;align-items:center;gap:9px;padding:8px 0 25px;font-weight:750}.mark{display:grid;place-items:center;width:30px;height:30px;border:1px solid #526170;border-radius:8px;color:var(--blue);font-weight:800}.nav-group{margin:20px 0}.nav-title,.toc strong{margin:0 0 6px;color:var(--muted);font-size:12px;font-weight:750}.nav a{display:block;padding:6px 10px;border-left:2px solid transparent;color:var(--muted)}.nav a:hover,.nav a.active{border-left-color:var(--blue);background:#65a8ff12;color:var(--text);text-decoration:none}
+header{margin-bottom:30px;padding:4px 0 28px;border-bottom:1px solid var(--line)}.eyebrow{color:var(--blue);font-size:12px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}h1{margin:5px 0 10px;font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.02em}h2{margin:46px 0 14px;font-size:25px;line-height:1.25;scroll-margin-top:24px}h3{margin:28px 0 9px;font-size:18px}.lede{max-width:690px;color:var(--muted);font-size:17px}.header-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:19px}.header-button{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #4b5b6d;border-radius:7px;background:var(--button-bg);color:var(--button-text);cursor:pointer;font:600 13px var(--sans)}.header-button:hover{border-color:var(--blue);color:var(--blue)}.header-button.primary{border-color:#4c8fd8;background:#1e4d7e;color:#fff}.header-button.primary:hover{background:#28649e}
+.callout{margin:21px 0;padding:13px 15px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;background:#65a8ff12}.callout strong{display:block}.endpoint{margin:17px 0;padding:17px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}.endpoint-head{display:flex;flex-wrap:wrap;align-items:center;gap:9px}.method{padding:3px 8px;border-radius:5px;font:700 12px var(--mono)}.get{background:#67d6a026;color:var(--green)}.post{background:#65a8ff29;color:var(--blue)}.patch{background:#f1c76b29;color:var(--yellow)}.delete{background:#ff8b8b29;color:var(--red)}.path{color:var(--text);font:600 14px var(--mono);overflow-wrap:anywhere}.endpoint p{margin:9px 0;color:var(--muted)}code,pre{font-family:var(--mono)}code{padding:2px 5px;border-radius:4px;background:var(--inline-bg);color:var(--inline-text);font-size:.9em}.code-wrap{position:relative;margin-top:11px}pre{margin:0;padding:14px;overflow:auto;border:1px solid #252c34;border-radius:7px;background:#090b0e;color:#d8e6f6;font-size:13px;line-height:1.6}.copy{position:absolute;top:8px;right:8px;padding:4px 8px;border:1px solid #3a4653;border-radius:5px;background:#1a222b;color:var(--muted);cursor:pointer;font:12px var(--sans)}.copy:hover{border-color:var(--blue);color:var(--text)}
+table{width:100%;margin:13px 0 20px;border-collapse:collapse;font-size:14px}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:12px;letter-spacing:.05em;text-transform:uppercase}td{color:#d9e0e8}td:first-child{color:#d7e7ff;font-family:var(--mono)}.toc{padding-left:15px;border-left:1px solid var(--line)}.toc a{display:block;padding:4px 0;color:var(--muted);font-size:13px}.toc a:hover{color:var(--text);text-decoration:none}.footer{margin-top:50px;padding-top:17px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media(max-width:1050px){.layout{grid-template-columns:205px minmax(0,1fr);gap:27px}.toc{display:none}}@media(max-width:700px){.layout{display:block;padding:17px 15px 50px}aside{position:static;display:flex;flex-wrap:wrap;gap:6px 14px;max-height:none;margin-bottom:24px;padding-bottom:11px;border-bottom:1px solid var(--line)}.brand{width:100%;padding:3px 0 7px}.nav-group{margin:0}.nav-title{display:none}.nav a{display:inline-block;padding:3px 6px;border:0;border-bottom:2px solid transparent;font-size:13px}.nav a.active{background:none;border-bottom-color:var(--blue)}h2{margin-top:35px}.endpoint{padding:14px}.header-actions{margin-top:15px}}@media(prefers-color-scheme:light){:root{--bg:#f7f9fc;--surface:#fff;--line:#d5dde6;--text:#17202b;--muted:#4d5b6a;--field:#1f5d9b;--inline-bg:#edf2f7;--inline-text:#183b63;--button-bg:#fff;--button-text:#1d4f82}.path{color:#1a2838}.endpoint p{color:#4d5b6a}code{background:var(--inline-bg);color:var(--inline-text)}td{color:#344252}td:first-child{color:var(--field)}}
+</style>
+</head>
+<body><div class="layout">
+<aside><div class="brand"><span class="mark">Q</span><span>Quarks Click API</span></div><div class="nav-group"><p class="nav-title">开始</p><nav class="nav"><a class="active" href="#overview">概览</a><a href="#auth">认证</a><a href="#errors">错误处理</a></nav></div><div class="nav-group"><p class="nav-title">短链</p><nav class="nav"><a href="#short-urls">短链接口</a><a href="#analytics">访问分析</a></nav></div><div class="nav-group"><p class="nav-title">管理</p><nav class="nav"><a href="#api-keys">API 密钥</a><a href="/admin-api/openapi.json">OpenAPI JSON</a></nav></div></aside>
+<main>
+<header id="overview"><div class="eyebrow">Developer reference · v2.1</div><h1>Quarks Click API</h1><p class="lede">用一个 API Key 创建、管理和分析短链。业务接口只需要 <code>X-Shlink-Api-Key</code>，密钥管理接口和本页面继续由管理后台登录保护。</p><div class="header-actions"><button class="header-button primary" id="copy-ai-prompt" type="button">复制 AI 提示词</button><a class="header-button" href="/admin-api/openapi.json">下载 OpenAPI JSON</a><span id="copy-status" aria-live="polite"></span></div></header>
+<section id="auth"><h2>认证</h2><p>业务 API 根地址：<code>https://admin.quarks.click/admin-api</code>。每次请求添加请求头：</p><div class="code-wrap"><button class="copy" data-copy="X-Shlink-Api-Key: YOUR_KEY">复制</button><pre>X-Shlink-Api-Key: YOUR_KEY</pre></div><div class="callout"><strong>密钥只显示一次</strong>在后台“设置 → API 密钥”创建后立即保存完整值。禁用或删除密钥会立即阻止后续请求。</div><p>API Key 管理接口（<code>/api-keys</code>）使用管理后台 HTTP Basic Auth。</p></section>
+<section id="short-urls"><h2>短链接口</h2>
+<div class="endpoint"><div class="endpoint-head"><span class="method get">GET</span><span class="path">/short-urls</span></div><p>分页查询短链。参数：<code>page</code>、<code>itemsPerPage</code>、<code>searchTerm</code>、<code>tags</code>。</p><div class="code-wrap"><button class="copy">复制</button><pre>curl -sS "https://admin.quarks.click/admin-api/short-urls?itemsPerPage=20" -H "X-Shlink-Api-Key: YOUR_KEY"</pre></div></div>
+<div class="endpoint"><div class="endpoint-head"><span class="method post">POST</span><span class="path">/short-urls</span></div><p>创建短链。<code>longUrl</code> 必填。</p><div class="code-wrap"><button class="copy">复制</button><pre>curl -X POST "https://admin.quarks.click/admin-api/short-urls" -H "X-Shlink-Api-Key: YOUR_KEY" -H "Content-Type: application/json" -d '{"longUrl":"https://example.com/docs","customSlug":"docs","tags":["public"]}'</pre></div></div>
+<div class="endpoint"><div class="endpoint-head"><span class="method get">GET</span><span class="path">/short-urls/{shortCode}</span></div><p>获取单条短链详情。</p></div><div class="endpoint"><div class="endpoint-head"><span class="method patch">PATCH</span><span class="path">/short-urls/{shortCode}</span></div><p>更新目标地址、别名、标签、域名或有效期，只提交需要变更的字段。</p></div><div class="endpoint"><div class="endpoint-head"><span class="method delete">DELETE</span><span class="path">/short-urls/{shortCode}</span></div><p>删除短链，成功返回 <code>204 No Content</code>。</p></div>
+<h3>创建字段</h3><table><thead><tr><th>字段</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>longUrl</td><td>string</td><td>目标 URL，必填。</td></tr><tr><td>customSlug</td><td>string</td><td>自定义短码；不传则自动生成。</td></tr><tr><td>tags</td><td>string[]</td><td>用于筛选和分组的标签。</td></tr><tr><td>domain</td><td>string</td><td>使用已配置的短链域名。</td></tr><tr><td>validSince / validUntil</td><td>ISO 8601</td><td>生效和失效时间。</td></tr><tr><td>maxVisits</td><td>integer</td><td>达到次数后停止跳转。</td></tr></tbody></table></section>
+<section id="analytics"><h2>访问分析</h2><div class="endpoint"><div class="endpoint-head"><span class="method get">GET</span><span class="path">/short-urls/{shortCode}/visits</span></div><p>查询单条短链访问记录。支持 <code>startDate</code>、<code>endDate</code>、<code>page</code>、<code>itemsPerPage</code>。</p></div><div class="endpoint"><div class="endpoint-head"><span class="method get">GET</span><span class="path">/visits</span></div><p>查询所有短链的访问记录，包含时间、来源、国家/城市、浏览器和设备信息（取决于 Shlink 追踪配置）。</p><div class="code-wrap"><button class="copy">复制</button><pre>import requests
+r = requests.get("https://admin.quarks.click/admin-api/visits", params={"startDate":"2026-01-01","itemsPerPage":50}, headers={"X-Shlink-Api-Key":"YOUR_KEY"})
+r.raise_for_status()
+print(r.json())</pre></div></div><div class="endpoint"><div class="endpoint-head"><span class="method get">GET</span><span class="path">/domains/{domain}/visits</span><span class="method get">GET</span><span class="path">/tags/{tag}/visits</span></div><p>按域名或标签过滤访问记录。</p></div></section>
+<section id="api-keys"><h2>API 密钥管理</h2><p>以下接口需要管理后台 Basic Auth，完整密钥仅在创建响应中返回一次。</p><div class="endpoint"><div class="endpoint-head"><span class="method get">GET</span><span class="path">/api-keys</span></div><p>列出名称、状态、过期时间和权限。</p></div><div class="endpoint"><div class="endpoint-head"><span class="method post">POST</span><span class="path">/api-keys</span></div><p>创建密钥。支持 <code>name</code>、<code>expirationDate</code>、<code>authorOnly</code>、<code>domainOnly</code>、<code>noOrphanVisits</code>。</p><div class="code-wrap"><button class="copy">复制</button><pre>curl -u "ADMIN_USER:ADMIN_PASSWORD" -X POST "https://admin.quarks.click/admin-api/api-keys" -H "Content-Type: application/json" -d '{"name":"friend-alice","authorOnly":true}'</pre></div></div><div class="endpoint"><div class="endpoint-head"><span class="method patch">PATCH</span><span class="path">/api-keys/{name}</span></div><p>重命名：<code>{"newName":"new-name"}</code>；禁用：<code>{"enabled":false}</code>。</p></div><div class="endpoint"><div class="endpoint-head"><span class="method delete">DELETE</span><span class="path">/api-keys/{name}</span></div><p>删除密钥，成功返回 <code>204</code>。</p></div></section>
+<section id="examples"><h2>多语言示例</h2><h3>JavaScript / Node.js</h3><div class="code-wrap"><button class="copy">复制</button><pre>const base = "https://admin.quarks.click/admin-api";
+const headers = {"X-Shlink-Api-Key": process.env.SHORTLINK_KEY};
+const response = await fetch(base + "/short-urls", {headers});
+if (!response.ok) throw new Error(response.status + " " + await response.text());
+console.log(await response.json());</pre></div><h3>Python</h3><div class="code-wrap"><button class="copy">复制</button><pre>import os, requests
+r = requests.post("https://admin.quarks.click/admin-api/short-urls",
+    headers={"X-Shlink-Api-Key": os.environ["SHORTLINK_KEY"]},
+    json={"longUrl":"https://example.com","tags":["campaign"]})
+r.raise_for_status()
+print(r.json())</pre></div><h3>PHP</h3><div class="code-wrap"><button class="copy">复制</button><pre>$ch = curl_init("https://admin.quarks.click/admin-api/short-urls");
+curl_setopt_array($ch, [CURLOPT_POST=>true, CURLOPT_RETURNTRANSFER=>true,
+  CURLOPT_HTTPHEADER=>["X-Shlink-Api-Key: ".$_ENV["SHORTLINK_KEY"],"Content-Type: application/json"],
+  CURLOPT_POSTFIELDS=>json_encode(["longUrl"=>"https://example.com"])]);
+$result = json_decode(curl_exec($ch), true); curl_close($ch);</pre></div><h3>Go</h3><div class="code-wrap"><button class="copy">复制</button><pre>req, _ := http.NewRequest("GET", "https://admin.quarks.click/admin-api/short-urls", nil)
+req.Header.Set("X-Shlink-Api-Key", os.Getenv("SHORTLINK_KEY"))
+res, err := http.DefaultClient.Do(req)
+if err != nil { log.Fatal(err) }
+defer res.Body.Close()</pre></div><h3>PowerShell</h3><div class="code-wrap"><button class="copy">复制</button><pre>$headers = @{"X-Shlink-Api-Key"=$env:SHORTLINK_KEY}
+$body = @{longUrl="https://example.com"} | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri "https://admin.quarks.click/admin-api/short-urls" -Headers $headers -Body $body -ContentType "application/json"</pre></div></section>
+<section id="errors"><h2>错误处理</h2><table><thead><tr><th>状态码</th><th>含义</th><th>建议</th></tr></thead><tbody><tr><td>400</td><td>请求参数不合法</td><td>检查 JSON、日期格式和 URL。</td></tr><tr><td>401</td><td>缺少或无效 API Key</td><td>确认请求头为 <code>X-Shlink-Api-Key</code>，并检查密钥状态。</td></tr><tr><td>404</td><td>短码不存在</td><td>确认 shortCode 和域名。</td></tr><tr><td>429</td><td>触发限流</td><td>使用指数退避重试。</td></tr></tbody></table><p>机器可读定义：<a href="/admin-api/openapi.json">OpenAPI 3.1 JSON</a>。</p></section>
+<p class="footer">Quarks Click API · 业务接口使用 X-Shlink-Api-Key · 文档版本 2.1</p>
+</main><nav class="toc"><strong>本页目录</strong><a href="#overview">概览</a><a href="#auth">认证</a><a href="#short-urls">短链接口</a><a href="#analytics">访问分析</a><a href="#api-keys">API 密钥管理</a><a href="#examples">多语言示例</a><a href="#errors">错误处理</a></nav>
+</div><script>
+const aiPrompt = `你是一个 API 集成助手。请根据以下 Quarks Click API 文档，帮助我生成准确、可运行的请求代码，并遵守认证和字段约束。
+
+服务地址：https://admin.quarks.click/admin-api
+认证规则：
+- 短链 CRUD 和访问分析只使用请求头 X-Shlink-Api-Key: YOUR_KEY。
+- API Key 管理接口 /api-keys 使用管理后台 HTTP Basic Auth。
+- 不要把 API Key 写入前端代码、日志或公开仓库；使用环境变量 SHORTLINK_KEY。
+
+短链接口：
+- GET /short-urls：分页查询，参数 page、itemsPerPage、searchTerm、tags。
+- POST /short-urls：创建短链，JSON 必填 longUrl，可选 customSlug、tags、domain、validSince、validUntil、maxVisits、findIfExists、validateUrl。
+- GET /short-urls/{shortCode}：获取短链详情。
+- PATCH /short-urls/{shortCode}：更新 longUrl、customSlug、tags、domain、validSince、validUntil、maxVisits。
+- DELETE /short-urls/{shortCode}：删除短链，成功返回 204。
+
+访问分析接口：
+- GET /short-urls/{shortCode}/visits：查询单条短链访问记录。
+- GET /visits：查询全部短链访问记录。
+- GET /domains/{domain}/visits：按域名查询访问记录。
+- GET /tags/{tag}/visits：按标签查询访问记录。
+- 统计接口支持 startDate、endDate、page、itemsPerPage。
+
+API Key 管理接口（需要 Basic Auth）：
+- GET /api-keys：列出密钥元数据。
+- POST /api-keys：创建密钥，name 必填，可选 expirationDate、authorOnly、domainOnly、noOrphanVisits；完整密钥只返回一次。
+- PATCH /api-keys/{name}：使用 {"newName":"..."} 重命名或 {"enabled":false} 禁用。
+- DELETE /api-keys/{name}：删除密钥。
+
+常见状态码：200 成功，201 创建成功，204 删除成功，400 参数错误，401 缺少/无效/已禁用认证，404 资源不存在，429 触发限流。请先向我确认目标语言、接口和请求参数，再输出代码，并包含错误处理。`;
+const copyText = async (text, button) => {
+  try { await navigator.clipboard.writeText(text); } catch {
+    const area = document.createElement("textarea");
+    area.value = text; area.style.position = "fixed"; area.style.opacity = "0";
+    document.body.append(area); area.select(); document.execCommand("copy"); area.remove();
+  }
+  const old = button.textContent; button.textContent = "已复制";
+  setTimeout(() => button.textContent = old, 1400);
+};
+document.querySelectorAll(".copy").forEach((button) => button.addEventListener("click", () => {
+  const code = button.closest(".code-wrap").querySelector("pre").textContent;
+  copyText(button.dataset.copy || code, button);
+}));
+document.querySelector("#copy-ai-prompt").addEventListener("click", () => copyText(aiPrompt, document.querySelector("#copy-ai-prompt")));
+</script>
+</body></html>

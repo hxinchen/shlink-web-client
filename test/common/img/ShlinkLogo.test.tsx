@@ -15,7 +15,7 @@ describe('<ShlinkLogo />', () => {
     ['white', 'white'],
   ])('renders expected color', async (color, expectedColor) => {
     const { container } = await setUp({ color });
-    await expect.element(container.querySelector('g')).toHaveAttribute('fill', expectedColor);
+    await expect.element(container.querySelector('g')).toHaveAttribute('stroke', expectedColor);
   });
 
   it.each([

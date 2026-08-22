@@ -1,6 +1,7 @@
 import { Button } from '@shlinkio/shlink-frontend-kit';
 import type { PropsWithChildren, ReactNode } from 'react';
 import { Component } from 'react';
+import { i18n } from '../i18n';
 import { ErrorLayout } from './ErrorLayout';
 
 type ErrorHandlerProps = PropsWithChildren<{
@@ -33,11 +34,11 @@ export class ErrorHandler extends Component<ErrorHandlerProps, ErrorHandlerState
 
     if (hasError) {
       return (
-        <ErrorLayout title="Oops! This is awkward :S">
-          <p>It seems that something went wrong. Try refreshing the page or just click this button.</p>
+        <ErrorLayout title={i18n.t('Oops! This is awkward :S')}>
+          <p>{i18n.t('It seems that something went wrong. Try refreshing the page or just click this button.')}</p>
           <br />
           <Button size="lg" onClick={() => location.reload()}>
-            Take me back
+            {i18n.t('Take me back')}
           </Button>
         </ErrorLayout>
       );

@@ -33,7 +33,7 @@ describe('<Home />', () => {
       },
       3,
     ],
-    [{}, 2],
+    [{}, 1],
   ])('shows link to create or set-up server only when no servers exist', async (servers, expectedServers) => {
     const screen = await setUp(servers);
     const links = screen.getByRole('link').elements();
@@ -44,7 +44,7 @@ describe('<Home />', () => {
       await expect
         .element(screen.getByText('This application will help you manage your Shlink servers.'))
         .toBeInTheDocument();
-      await expect.element(screen.getByText('Learn more about Shlink')).toBeInTheDocument();
+      await expect.element(screen.getByRole('link', { name: 'Add a server' })).toBeInTheDocument();
     }
   });
 });

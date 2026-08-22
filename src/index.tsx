@@ -3,12 +3,11 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router';
 import pack from '../package.json';
 import { App } from './app/App';
-import { appUpdateAvailable } from './app/reducers/appUpdates';
 import { ErrorHandler } from './common/ErrorHandler';
 import { ScrollToTop } from './common/ScrollToTop';
 import { container } from './container';
 import { ContainerProvider } from './container/context';
-import { register as registerServiceWorker } from './serviceWorkerRegistration';
+import { unregister as unregisterServiceWorker } from './serviceWorkerRegistration';
 import { setUpStore } from './store';
 import './tailwind.css';
 
@@ -28,9 +27,6 @@ createRoot(document.getElementById('root')!).render(
   </ContainerProvider>,
 );
 
-// Learn more about service workers: https://cra.link/PWA
-registerServiceWorker({
-  onUpdate() {
-    store.dispatch(appUpdateAvailable());
-  },
-});
+// The admin console is an authenticated operational tool. Offline caching can retain stale
+// credentials and can intercept backend documentation routes, so deliberately keep it online-only.
+unregisterServiceWorker();

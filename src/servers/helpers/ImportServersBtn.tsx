@@ -4,6 +4,7 @@ import { Button, Tooltip, useToggle, useTooltip } from '@shlinkio/shlink-fronten
 import type { ChangeEvent, FC, PropsWithChildren } from 'react';
 import { useCallback, useRef, useState } from 'react';
 import { withDependencies } from '../../container/context';
+import { useTranslation } from '../../i18n/useTranslation';
 import type { ServerData } from '../data';
 import { useServers } from '../reducers/servers';
 import type { ServersImporter } from '../services/ServersImporter';
@@ -34,6 +35,7 @@ const ImportServersBtnBase: FC<ImportServersBtnProps> = ({
   const [duplicatedServers, setDuplicatedServers] = useState<ServerData[]>([]);
   const { flag: isModalOpen, setToTrue: showModal, setToFalse: hideModal } = useToggle();
   const newServersCreatedRef = useRef(false);
+  const { t } = useTranslation();
 
   const onFile = useCallback(
     async ({ target }: ChangeEvent<HTMLInputElement>) =>
@@ -78,10 +80,11 @@ const ImportServersBtnBase: FC<ImportServersBtnProps> = ({
   return (
     <>
       <Button variant="secondary" className={className} onClick={() => fileInputRef.current?.click()} {...anchor}>
-        <FontAwesomeIcon icon={importIcon} widthAuto /> {children ?? 'Import from file'}
+        <FontAwesomeIcon icon={importIcon} widthAuto /> {children ?? t('Import from file')}
       </Button>
       <Tooltip {...tooltip}>
-        You can create servers by importing a CSV file with <b>name</b>, <b>apiKey</b> and <b>url</b> columns.
+        {t('You can create servers by importing a CSV file with')} <b>name</b>, <b>apiKey</b> {t('and')} <b>url</b>{' '}
+        {t('columns.')}
       </Tooltip>
 
       <input

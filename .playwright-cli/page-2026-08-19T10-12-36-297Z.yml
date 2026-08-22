@@ -1,0 +1,27 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - heading [level=4] [ref=e6]:
+      - generic [ref=e7]:
+        - link "Quarks Click" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - combobox "Language" [ref=e14] [cursor=pointer]:
+          - option "简体中文" [selected]
+          - option "English"
+    - menu "显示菜单" [ref=e15]:
+      - menuitem [ref=e16]:
+        - link "设置" [ref=e17] [cursor=pointer]:
+          - /url: /settings
+      - menuitem [ref=e20]:
+        - button "服务器" [ref=e22] [cursor=pointer]
+  - generic [ref=e28]:
+    - generic [ref=e39]:
+      - heading "欢迎！" [level=1] [ref=e40]
+      - generic [ref=e41]:
+        - paragraph [ref=e42]: 在这里管理你的 Quarks Click 短链服务。
+        - paragraph [ref=e43]:
+          - link "添加服务器" [ref=e44] [cursor=pointer]:
+            - /url: /server/create
+    - generic [ref=e49]:
+      - text: "客户端:"
+      - link "latest" [ref=e50] [cursor=pointer]:
+        - /url: https://github.com/shlinkio/shlink-web-client/releases/latest

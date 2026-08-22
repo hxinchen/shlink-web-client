@@ -23,6 +23,7 @@ const initialState: Settings = {
   shortUrlCreation: {},
   ui: {
     theme: getSystemPreferredTheme(),
+    language: 'zh-CN',
   },
   visits: {
     defaultInterval: 'last30Days',

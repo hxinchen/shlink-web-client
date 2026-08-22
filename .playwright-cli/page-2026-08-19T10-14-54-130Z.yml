@@ -1,0 +1,40 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - heading [level=4] [ref=e6]:
+      - generic [ref=e7]:
+        - link "Quarks Click" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - combobox "Language" [ref=e14] [cursor=pointer]:
+          - option "简体中文" [selected]
+          - option "English"
+    - menu "显示菜单" [ref=e15]:
+      - menuitem [ref=e16]:
+        - link "设置" [ref=e17] [cursor=pointer]:
+          - /url: /settings
+      - menuitem [ref=e20]:
+        - button "服务器" [ref=e22] [cursor=pointer]
+  - generic [ref=e28]:
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - heading "编辑“Quarks Click”" [level=5] [ref=e88]
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - generic [ref=e91] [cursor=pointer]: 名称*
+            - textbox "名称*" [ref=e92]: Quarks Click
+          - generic [ref=e93]:
+            - generic [ref=e94] [cursor=pointer]: 网址*
+            - textbox "网址*" [ref=e95]: https://quarks.click
+          - generic [ref=e96]:
+            - generic [ref=e97] [cursor=pointer]: API 密钥*
+            - generic [ref=e98]:
+              - textbox "API 密钥*" [ref=e99]: REPLACE_WITH_YOUR_API_KEY
+              - button "Show password" [ref=e100] [cursor=pointer]
+          - group [ref=e103]:
+            - generic "高级选项" [ref=e104] [cursor=pointer]
+      - generic [ref=e105]:
+        - button "取消" [ref=e106] [cursor=pointer]
+        - button "保存" [ref=e107] [cursor=pointer]
+    - generic [ref=e67]:
+      - text: "客户端:"
+      - link "latest" [ref=e68] [cursor=pointer]:
+        - /url: https://github.com/shlinkio/shlink-web-client/releases/latest

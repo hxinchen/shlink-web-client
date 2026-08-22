@@ -1,0 +1,49 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - heading [level=4] [ref=e6]:
+      - generic [ref=e7]:
+        - link "Quarks Click" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - combobox "Language" [ref=e14] [cursor=pointer]:
+          - option "简体中文" [selected]
+          - option "English"
+    - menu "显示菜单" [ref=e15]:
+      - menuitem [ref=e16]:
+        - link "设置" [ref=e17] [cursor=pointer]:
+          - /url: /settings
+      - menuitem [ref=e20]:
+        - button "服务器" [ref=e22] [cursor=pointer]
+  - generic [ref=e28]:
+    - generic [ref=e30]:
+      - searchbox "搜索…" [ref=e34]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - button "导入服务器" [ref=e37] [cursor=pointer]
+          - button "导出服务器" [ref=e40] [cursor=pointer]
+        - link "添加服务器" [ref=e43] [cursor=pointer]:
+          - /url: /server/create
+      - table [ref=e48]:
+        - rowgroup [ref=e49]:
+          - row [ref=e50]:
+            - columnheader "名称" [ref=e51]
+            - columnheader "基础网址" [ref=e52]
+            - columnheader "操作" [ref=e53]
+        - rowgroup [ref=e55]:
+          - row [ref=e56]:
+            - cell [ref=e57]:
+              - link "Quarks Click" [ref=e58] [cursor=pointer]:
+                - /url: /server/quarks-click-quarks.click
+            - cell "https://quarks.click" [ref=e59]
+            - cell [ref=e60]:
+              - generic [ref=e61]:
+                - button "Options" [expanded] [ref=e62] [cursor=pointer]
+                - menu [ref=e70]:
+                  - menuitem "连接" [active] [ref=e71] [cursor=pointer]
+                  - menuitem "编辑服务器" [ref=e74] [cursor=pointer]
+                  - menuitem "自动连接" [ref=e77] [cursor=pointer]
+                  - separator [ref=e80]
+                  - menuitem "移除服务器" [ref=e81] [cursor=pointer]
+    - generic [ref=e67]:
+      - text: "客户端:"
+      - link "latest" [ref=e68] [cursor=pointer]:
+        - /url: https://github.com/shlinkio/shlink-web-client/releases/latest

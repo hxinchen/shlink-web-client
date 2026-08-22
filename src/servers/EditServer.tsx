@@ -1,6 +1,7 @@
 import { Button, useParsedQuery } from '@shlinkio/shlink-frontend-kit';
 import type { FC } from 'react';
 import { NoMenuLayout } from '../common/NoMenuLayout';
+import { useTranslation } from '../i18n/useTranslation';
 import { useGoBack } from '../utils/helpers/hooks';
 import type { ServerData } from './data';
 import { isServerWithId } from './data';
@@ -14,6 +15,7 @@ export const EditServer: FC = withSelectedServer(() => {
   const { selectServer, selectedServer } = useSelectedServer();
   const goBack = useGoBack();
   const { reconnect } = useParsedQuery<{ reconnect?: 'true' }>();
+  const { t } = useTranslation();
 
   if (!isServerWithId(selectedServer)) {
     return null;
@@ -30,14 +32,14 @@ export const EditServer: FC = withSelectedServer(() => {
   return (
     <NoMenuLayout>
       <ServerForm
-        title={<>Edit &quot;{selectedServer.name}&quot;</>}
+        title={t('Edit "{{name}}"', { name: selectedServer.name })}
         initialValues={selectedServer}
         onSubmit={handleSubmit}
       >
         <Button variant="secondary" onClick={goBack}>
-          Cancel
+          {t('Cancel')}
         </Button>
-        <Button type="submit">Save</Button>
+        <Button type="submit">{t('Save')}</Button>
       </ServerForm>
     </NoMenuLayout>
   );

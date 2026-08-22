@@ -1,6 +1,7 @@
 import { CardModal } from '@shlinkio/shlink-frontend-kit';
 import type { FC } from 'react';
 import { Fragment } from 'react';
+import { useTranslation } from '../../i18n/useTranslation';
 import type { ServerData } from '../data';
 
 export type DuplicatedServersModalProps = {
@@ -17,27 +18,28 @@ export const DuplicatedServersModal: FC<DuplicatedServersModalProps> = ({
   onConfirm,
 }) => {
   const hasMultipleServers = duplicatedServers.length > 1;
+  const { t } = useTranslation();
 
   return (
     <CardModal
       size="lg"
-      title={`Duplicated server${hasMultipleServers ? 's' : ''}`}
+      title={hasMultipleServers ? t('Duplicated servers') : t('Duplicated server')}
       open={open}
       onClose={onClose}
       onConfirm={onConfirm}
-      confirmText={`Save duplicate${hasMultipleServers ? 's' : ''}`}
-      cancelText={hasMultipleServers ? 'Ignore duplicates' : 'Discard'}
+      confirmText={hasMultipleServers ? t('Save duplicates') : t('Save duplicate')}
+      cancelText={hasMultipleServers ? t('Ignore duplicates') : t('Discard')}
     >
-      <p>{hasMultipleServers ? 'The next servers already exist:' : 'There is already a server with:'}</p>
+      <p>{hasMultipleServers ? t('The next servers already exist:') : t('There is already a server with:')}</p>
       <ul className="list-disc my-4 pl-5">
         {duplicatedServers.map(({ url, apiKey }, index) =>
           !hasMultipleServers ? (
             <Fragment key={index}>
               <li>
-                URL: <b>{url}</b>
+                {t('URL')}: <b>{url}</b>
               </li>
               <li>
-                API key: <b>{apiKey}</b>
+                {t('API key')}: <b>{apiKey}</b>
               </li>
             </Fragment>
           ) : (
@@ -47,7 +49,9 @@ export const DuplicatedServersModal: FC<DuplicatedServersModalProps> = ({
           ),
         )}
       </ul>
-      <span>{hasMultipleServers ? 'Do you want to save duplicated servers' : 'Do you want to save this server'}?</span>
+      <span>
+        {hasMultipleServers ? t('Do you want to save duplicated servers') : t('Do you want to save this server')}?
+      </span>
     </CardModal>
   );
 };

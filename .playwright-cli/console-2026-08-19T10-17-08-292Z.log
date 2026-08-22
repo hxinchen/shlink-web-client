@@ -1,0 +1,125 @@
+[     936ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:14333
+[     953ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ http://localhost:3001/node_modules/.vite/deps/i18next.js?v=92205b7a:1533
+[     983ms] [WARNING] [Redux-LocalStorage-Simple] Invalid load 'shlink.settings' provided. Check your 'states' in 'load()'. If this is your first time running this app you may see this message. To disable it in future use the 'disableWarnings' flag, see documentation. @ http://localhost:3001/@vite/client:528
+[     983ms] [WARNING] [Redux-LocalStorage-Simple] Invalid load 'shlink.servers' provided. Check your 'states' in 'load()'. If this is your first time running this app you may see this message. To disable it in future use the 'disableWarnings' flag, see documentation. @ http://localhost:3001/@vite/client:528
+[   30597ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3001/@vite/client:998
+[   55500ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:14333
+[   55503ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ http://localhost:3001/node_modules/.vite/deps/i18next.js?v=92205b7a:1533
+[   93164ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:14333
+[   93167ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ http://localhost:3001/node_modules/.vite/deps/i18next.js?v=92205b7a:1533
+[   93178ms] [WARNING] [Redux-LocalStorage-Simple] Invalid load 'shlink.settings' provided. Check your 'states' in 'load()'. If this is your first time running this app you may see this message. To disable it in future use the 'disableWarnings' flag, see documentation. @ http://localhost:3001/@vite/client:528
+[   93178ms] [WARNING] [Redux-LocalStorage-Simple] Invalid load 'shlink.servers' provided. Check your 'states' in 'load()'. If this is your first time running this app you may see this message. To disable it in future use the 'disableWarnings' flag, see documentation. @ http://localhost:3001/@vite/client:528
+[  109935ms] [WARNING] You rendered descendant <Routes> (or called `useRoutes()`) at "/server/quarks-click-localhost-3001/" (under <Route path="">) but the parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
+
+Please change the parent <Route path=""> to <Route path="/*">. @ http://localhost:3001/@vite/client:528
+[  110578ms] [ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3001/rest/v3/mercure-info:0
+[  217921ms] [WARNING] You rendered descendant <Routes> (or called `useRoutes()`) at "/server/quarks-click-localhost-3001/short-code/quarks-ui-check/visits/" (under <Route path="">) but the parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
+
+Please change the parent <Route path=""> to <Route path="/*">. @ http://localhost:3001/@vite/client:528
+[  288029ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:14333
+[  288031ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ http://localhost:3001/node_modules/.vite/deps/i18next.js?v=92205b7a:1533
+[  289307ms] [ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3001/rest/v3/mercure-info:0
+[  351099ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3001/@vite/client:998
+[12327902ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:14333
+[12327906ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ http://localhost:3001/node_modules/.vite/deps/i18next.js?v=92205b7a:1533
+[12329608ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[12329617ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[12329650ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[12540268ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:14333
+[12540271ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ http://localhost:3001/node_modules/.vite/deps/i18next.js?v=92205b7a:1533
+[12541920ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[12541971ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[12541988ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[12820386ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[12820417ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[12820429ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[12851064ms] [ERROR] %o
+
+%s
+
+%s
+ Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+    at finishRenderingHooks (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4241:36)
+    at renderWithHooks (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4222:4)
+    at updateFunctionComponent (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:5567:16)
+    at beginWork (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:6138:20)
+    at runWithFiberInDEV (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:850:66)
+    at performUnitOfWork (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:8427:92)
+    at workLoopSync (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:8323:37)
+    at renderRootSync (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:8307:6)
+    at performWorkOnRoot (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:7992:27)
+    at performSyncWorkOnRoot (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:9065:4) The above error occurred in the <AsideMenu> component. React will try to recreate this component tree from scratch using the error boundary you provided, ErrorHandler. @ http://localhost:3001/@vite/client:528
+[12851064ms] [ERROR] Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+    at finishRenderingHooks (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4241:36)
+    at renderWithHooks (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4222:4)
+    at updateFunctionComponent (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:5567:16)
+    at beginWork (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:6138:20)
+    at runWithFiberInDEV (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:850:66)
+    at performUnitOfWork (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:8427:92)
+    at workLoopSync (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:8323:37)
+    at renderRootSync (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:8307:6)
+    at performWorkOnRoot (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:7992:27)
+    at performSyncWorkOnRoot (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:9065:4) @ http://localhost:3001/@vite/client:528
+[12851885ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[12851904ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[12851919ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[12852428ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[12852467ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[12852478ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[12853321ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[12853353ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[12853369ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[13025691ms] [ERROR] React has detected a change in the order of Hooks called by %s. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://react.dev/link/rules-of-hooks
+
+   Previous render            Next render
+   ------------------------------------------------------
+%s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ AsideMenu 1. useContext                 useContext
+2. useContext                 useContext
+3. useSyncExternalStore       useSyncExternalStore
+4. undefined                  useCallback
+ @ http://localhost:3001/@vite/client:528
+[13025693ms] [ERROR] %o
+
+%s
+
+%s
+ Error: Rendered more hooks than during the previous render.
+    at updateWorkInProgressHook (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4325:12)
+    at updateCallback (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4919:15)
+    at Object.useCallback (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:13239:12)
+    at exports.useCallback (http://localhost:3001/node_modules/.vite/deps/react.js?v=92205b7a:701:31)
+    at useTranslation (http://localhost:3001/@fs/D:/project/GitHub/Shlink/shlink-web-component/src/i18n/useTranslation.ts?t=1787147653594:14:12)
+    at AsideMenu (http://localhost:3001/@fs/D:/project/GitHub/Shlink/shlink-web-component/src/common/AsideMenu.tsx?t=1787147653594:26:16)
+    at Object.react_stack_bottom_frame (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:12864:12)
+    at renderWithHooks (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4211:19)
+    at updateFunctionComponent (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:5567:16)
+    at beginWork (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:6138:20) The above error occurred in the <AsideMenu> component. React will try to recreate this component tree from scratch using the error boundary you provided, ErrorHandler. @ http://localhost:3001/@vite/client:528
+[13025693ms] [ERROR] Error: Rendered more hooks than during the previous render.
+    at updateWorkInProgressHook (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4325:12)
+    at updateCallback (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4919:15)
+    at Object.useCallback (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:13239:12)
+    at exports.useCallback (http://localhost:3001/node_modules/.vite/deps/react.js?v=92205b7a:701:31)
+    at useTranslation (http://localhost:3001/@fs/D:/project/GitHub/Shlink/shlink-web-component/src/i18n/useTranslation.ts?t=1787147653594:14:12)
+    at AsideMenu (http://localhost:3001/@fs/D:/project/GitHub/Shlink/shlink-web-component/src/common/AsideMenu.tsx?t=1787147653594:26:16)
+    at Object.react_stack_bottom_frame (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:12864:12)
+    at renderWithHooks (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:4211:19)
+    at updateFunctionComponent (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:5567:16)
+    at beginWork (http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:6138:20) @ http://localhost:3001/@vite/client:528
+[13026462ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[13026480ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[13026504ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[13027008ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[13027031ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[13027041ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[13610754ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:14333
+[13610759ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ http://localhost:3001/node_modules/.vite/deps/i18next.js?v=92205b7a:1533
+[13612373ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[13612426ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[13612447ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[13755544ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/react-dom_client.js?v=92205b7a:14333
+[13755548ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ http://localhost:3001/node_modules/.vite/deps/i18next.js?v=92205b7a:1533
+[13757288ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/mercure-info:0
+[13757310ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/domains:0
+[13757330ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:3001/rest/v3/tags/stats:0
+[13928797ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3001/@vite/client:998

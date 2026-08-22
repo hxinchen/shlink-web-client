@@ -1,4 +1,5 @@
 import { ExternalLink } from 'react-external-link';
+import { useTranslation } from '../i18n/useTranslation';
 import type { SelectedServer } from '../servers/data';
 import { isReachableServer } from '../servers/data';
 import { versionToPrintable, versionToSemVer } from '../utils/helpers/version';
@@ -19,15 +20,16 @@ const VersionLink = ({ project, version }: { project: 'shlink' | 'shlink-web-cli
 
 export const ShlinkVersions = ({ selectedServer, clientVersion = SHLINK_WEB_CLIENT_VERSION }: ShlinkVersionsProps) => {
   const normalizedClientVersion = normalizeVersion(clientVersion);
+  const { t } = useTranslation();
 
   return (
     <small className="text-gray-500">
       {isReachableServer(selectedServer) && (
         <>
-          Server: <VersionLink project="shlink" version={selectedServer.printableVersion} /> -{' '}
+          {t('Server')}: <VersionLink project="shlink" version={selectedServer.printableVersion} /> -{' '}
         </>
       )}
-      Client: <VersionLink project="shlink-web-client" version={normalizedClientVersion} />
+      {t('Client')}: <VersionLink project="shlink-web-client" version={normalizedClientVersion} />
     </small>
   );
 };

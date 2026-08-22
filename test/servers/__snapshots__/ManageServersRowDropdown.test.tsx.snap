@@ -10,7 +10,7 @@ exports[`<ManageServersRowDropdown /> > renders expected size and icon 1`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Options"
-      class="flex items-center rounded-md focus-ring cursor-pointer border border-lm-border dark:border-dm-border bg-lm-primary dark:bg-dm-primary group-[&]/card:bg-lm-input group-[&]/card:dark:bg-dm-input px-3 py-1.5 gap-x-2"
+      class="flex items-center rounded-md focus-ring transition-[background-color,border-color,color,box-shadow] duration-[160ms] cursor-pointer border border-lm-border dark:border-dm-border bg-lm-primary dark:bg-dm-primary group-[&]/card:bg-lm-input group-[&]/card:dark:bg-dm-input px-3.5 py-2 gap-x-2"
       type="button"
     >
       <svg
@@ -41,7 +41,7 @@ exports[`<ManageServersRowDropdown /> > renders expected size and icon 2`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Options"
-      class="flex items-center rounded-md focus-ring cursor-pointer border border-lm-border dark:border-dm-border bg-lm-primary dark:bg-dm-primary group-[&]/card:bg-lm-input group-[&]/card:dark:bg-dm-input px-3 py-1.5 gap-x-2"
+      class="flex items-center rounded-md focus-ring transition-[background-color,border-color,color,box-shadow] duration-[160ms] cursor-pointer border border-lm-border dark:border-dm-border bg-lm-primary dark:bg-dm-primary group-[&]/card:bg-lm-input group-[&]/card:dark:bg-dm-input px-3.5 py-2 gap-x-2"
       type="button"
     >
       <svg

@@ -25,9 +25,9 @@ describe('<ServerError />', () => {
     [
       fromPartial<NotFoundServer>({}),
       {
-        found: ['Could not find this Shlink server.'],
+        found: ['Could not find this server.'],
         notFound: [
-          'Oops! Could not connect to this Shlink server.',
+          'Oops! Could not connect to this server.',
           'Make sure you have internet connection, and the server is properly configured and on-line.',
           /^Alternatively, if you think you may have misconfigured this server/,
         ],
@@ -37,11 +37,11 @@ describe('<ServerError />', () => {
       fromPartial<NonReachableServer>({ id: 'abc123' }),
       {
         found: [
-          'Oops! Could not connect to this Shlink server.',
+          'Oops! Could not connect to this server.',
           'Make sure you have internet connection, and the server is properly configured and on-line.',
           /^Alternatively, if you think you may have misconfigured this server/,
         ],
-        notFound: ['Could not find this Shlink server.'],
+        notFound: ['Could not find this server.'],
       },
     ],
   ])('renders expected information based on provided server type', async (selectedServer, { found, notFound }) => {

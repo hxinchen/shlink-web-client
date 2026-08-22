@@ -1,0 +1,59 @@
+# Quarks Click admin console image.
+# Build context must be the parent directory containing all three repos:
+#   docker build -f shlink-web-client/Dockerfile.quarks -t quarks-admin:local .
+# The three local checkouts (shlink-frontend-kit, shlink-web-component, shlink-web-client)
+# are built in order and the two libraries are injected as tarballs, so the image always
+# ships the forked code instead of the npm registry versions.
+
+FROM node:26.7-alpine AS libs
+# Upstream package.json files carry no version (it is injected at release time), but `npm pack`
+# requires one. The versions below must satisfy the peer ranges declared upstream
+# (frontend-kit ^1.6.0, web-component ^0.19.2).
+ARG FK_VERSION=1.6.100
+ARG WC_VERSION=0.19.100
+
+# Build shlink-frontend-kit
+COPY shlink-frontend-kit /libs/shlink-frontend-kit
+RUN cd /libs/shlink-frontend-kit \
+    && npm ci \
+    && node --run build \
+    && npm pkg set version=${FK_VERSION} \
+    && npm pack --pack-destination /libs
+
+# Build shlink-web-component against the local frontend-kit
+COPY shlink-web-component /libs/shlink-web-component
+RUN cd /libs/shlink-web-component \
+    && npm ci \
+    && npm install --no-save /libs/shlinkio-shlink-frontend-kit-*.tgz \
+    && node --run build \
+    && npm pkg set version=${WC_VERSION} \
+    && npm pack --pack-destination /libs
+
+FROM node:26.7-alpine AS app
+ARG VERSION="latest"
+ENV VERSION=${VERSION}
+COPY shlink-web-client /shlink-web-client
+COPY --from=libs /libs/*.tgz /libs/
+# LOCAL_LIBS=false: use the packed tarballs instead of Vite source aliases
+RUN cd /shlink-web-client \
+    && npm ci \
+    && npm install --no-save /libs/shlinkio-shlink-frontend-kit-*.tgz /libs/shlinkio-shlink-web-component-*.tgz \
+    && LOCAL_LIBS=false node --run build
+
+FROM nginxinc/nginx-unprivileged:1.31.3-alpine
+ARG UID=101
+
+USER root
+RUN rm -r /usr/share/nginx/html && rm /etc/nginx/conf.d/default.conf
+COPY shlink-web-client/config/docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY shlink-web-client/scripts/docker/servers_from_env.sh /docker-entrypoint.d/30-shlink-servers-json.sh
+RUN sed -i 's/\r$//' /docker-entrypoint.d/30-shlink-servers-json.sh \
+    && chmod 0755 /docker-entrypoint.d/30-shlink-servers-json.sh
+COPY --from=app /shlink-web-client/build /usr/share/nginx/html
+
+# This is required by 30-shlink-servers-json.sh to be writable for UID
+RUN echo '[]' > /usr/share/nginx/html/servers.json \
+    && chown $UID:0 /usr/share/nginx/html/servers.json
+
+# Switch to non-privileged UID as the last step
+USER $UID

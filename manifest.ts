@@ -1,4 +1,3 @@
-import { BRAND_COLOR_LM } from '@shlinkio/shlink-frontend-kit';
 import type { ManifestOptions } from 'vite-plugin-pwa';
 
 const iconSizes = [
@@ -32,12 +31,14 @@ const iconSizes = [
 ];
 
 export const manifest: Partial<ManifestOptions> = {
-  short_name: 'Shlink',
-  name: 'Shlink Web Client',
+  short_name: 'Quarks Click',
+  name: 'Quarks Click 短链管理',
+  description: 'Quarks Click 短链服务管理后台',
+  lang: 'zh-CN',
   start_url: '/',
   display: 'standalone',
-  theme_color: BRAND_COLOR_LM, // Toolbar color
-  background_color: BRAND_COLOR_LM, // Splash screen background color
+  theme_color: '#1C1C1C',
+  background_color: '#000000',
   icons: iconSizes.map((size) => ({
     src: `./icons/icon-${size}x${size}.png`,
     type: 'image/png',

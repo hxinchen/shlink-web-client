@@ -5,7 +5,7 @@ import { DEFAULT_SHORT_URLS_ORDERING, setSettings, settingsReducer } from '../..
 describe('settingsReducer', () => {
   const realTimeUpdates = { enabled: true };
   const shortUrlCreation = {};
-  const ui = { theme: 'light' as const };
+  const ui = { theme: 'light' as const, language: 'zh-CN' as const };
   const visits = { defaultInterval: 'last30Days' as const };
   const shortUrlsList = { defaultOrdering: DEFAULT_SHORT_URLS_ORDERING };
   const settings = fromPartial<Settings>({ realTimeUpdates, shortUrlCreation, ui, visits, shortUrlsList });

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Table, Tooltip, useTooltip } from '@shlinkio/shlink-frontend-kit';
 import type { FC } from 'react';
 import { Link } from 'react-router';
+import { useTranslation } from '../i18n/useTranslation';
 import type { ServerWithId } from './data';
 import { ManageServersRowDropdown } from './ManageServersRowDropdown';
 
@@ -13,11 +14,12 @@ export type ManageServersRowProps = {
 
 export const ManageServersRow: FC<ManageServersRowProps> = ({ server, hasAutoConnect }) => {
   const { anchor, tooltip } = useTooltip();
+  const { t } = useTranslation();
 
   return (
     <Table.Row className="relative">
       {hasAutoConnect && (
-        <Table.Cell columnName="Auto-connect">
+        <Table.Cell columnName={t('Auto-connect')}>
           {server.autoConnect && (
             <>
               <FontAwesomeIcon
@@ -26,15 +28,15 @@ export const ManageServersRow: FC<ManageServersRowProps> = ({ server, hasAutoCon
                 {...anchor}
                 data-testid="auto-connect"
               />
-              <Tooltip {...tooltip}>Auto-connect to this server</Tooltip>
+              <Tooltip {...tooltip}>{t('Auto-connect to this server')}</Tooltip>
             </>
           )}
         </Table.Cell>
       )}
-      <Table.Cell className="font-bold" columnName="Name">
+      <Table.Cell className="font-bold" columnName={t('Name')}>
         <Link to={`/server/${server.id}`}>{server.name}</Link>
       </Table.Cell>
-      <Table.Cell columnName="Base URL" className="max-lg:border-b-0">
+      <Table.Cell columnName={t('Base URL')} className="max-lg:border-b-0">
         {server.url}
       </Table.Cell>
       <Table.Cell className="text-right max-lg:absolute right-0 -top-1 mx-lg:pt-0">
