@@ -5,7 +5,7 @@ import {
   ShlinkWebComponent,
 } from '@shlinkio/shlink-web-component';
 import type { FC } from 'react';
-import { memo } from 'react';
+import { useCallback, useMemo } from 'react';
 import type { ShlinkApiClientBuilder } from '../api/services/ShlinkApiClientBuilder';
 import { withDependencies } from '../container/context';
 import { isReachableServer } from '../servers/data';
@@ -21,12 +21,8 @@ export type ShlinkWebComponentContainerProps = {
 };
 
 const ShlinkWebComponentContainerBase: FC<ShlinkWebComponentContainerProps> =
-  // FIXME Using `memo` here to solve a flickering effect in charts.
-  //       memo is probably not the right solution. The root cause is the withSelectedServer HOC, but I couldn't fix the
-  //       extra rendering there.
-  //       This should be revisited at some point.
   withSelectedServer(
-    memo(({ buildShlinkApiClient, TagColorsStorage: tagColorsStorage }) => {
+    ({ buildShlinkApiClient, TagColorsStorage: tagColorsStorage }) => {
       const { selectedServer } = useSelectedServer();
       const { settings } = useSettings();
 
@@ -35,23 +31,36 @@ const ShlinkWebComponentContainerBase: FC<ShlinkWebComponentContainerProps> =
       }
 
       const routesPrefix = `/server/${selectedServer.id}`;
+
+      // ShlinkWebComponent re-creates its whole store when the apiClient prop changes identity, so
+      // these references must stay stable across re-renders not caused by a server switch. Creating
+      // them inline would wipe all cached state on every un-related re-render.
+      const apiClient = useMemo(
+        () => buildShlinkApiClient(selectedServer),
+        [buildShlinkApiClient, selectedServer],
+      );
+      const createNotFound = useCallback(
+        (nonPrefixedHomePath: string) => (
+          <NotFound to={`${routesPrefix}${nonPrefixedHomePath}`}>List short URLs</NotFound>
+        ),
+        [routesPrefix],
+      );
+
       return (
         <ShlinkSidebarVisibilityProvider>
           <ShlinkSidebarToggleButton className="fixed top-3.5 left-3 z-901" />
           <ShlinkWebComponent
             serverVersion={selectedServer.version}
-            apiClient={buildShlinkApiClient(selectedServer)}
+            apiClient={apiClient}
             settings={settings}
             routesPrefix={routesPrefix}
             tagColorsStorage={tagColorsStorage}
-            createNotFound={(nonPrefixedHomePath: string) => (
-              <NotFound to={`${routesPrefix}${nonPrefixedHomePath}`}>List short URLs</NotFound>
-            )}
+            createNotFound={createNotFound}
             autoSidebarToggle={false}
           />
         </ShlinkSidebarVisibilityProvider>
       );
-    }),
+    },
   );
 
 export const ShlinkWebComponentContainer = withDependencies(ShlinkWebComponentContainerBase, [
