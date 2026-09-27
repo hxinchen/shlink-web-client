@@ -20,48 +20,49 @@ export type ShlinkWebComponentContainerProps = {
   buildShlinkApiClient: ShlinkApiClientBuilder;
 };
 
-const ShlinkWebComponentContainerBase: FC<ShlinkWebComponentContainerProps> =
-  withSelectedServer(
-    ({ buildShlinkApiClient, TagColorsStorage: tagColorsStorage }) => {
-      const { selectedServer } = useSelectedServer();
-      const { settings } = useSettings();
+const ShlinkWebComponentContainerBase: FC<ShlinkWebComponentContainerProps> = withSelectedServer(
+  ({ buildShlinkApiClient, TagColorsStorage: tagColorsStorage }) => {
+    const { selectedServer } = useSelectedServer();
+    const { settings, setSettings } = useSettings();
 
-      if (!isReachableServer(selectedServer)) {
-        return <ServerError />;
-      }
+    const reachable = isReachableServer(selectedServer);
+    const routesPrefix = reachable ? `/server/${selectedServer.id}` : '';
 
-      const routesPrefix = `/server/${selectedServer.id}`;
+    // ShlinkWebComponent re-creates its whole store when the apiClient prop changes identity, so
+    // these references must stay stable across re-renders not caused by a server switch. Creating
+    // them inline would wipe all cached state on every un-related re-render.
+    const apiClient = useMemo(
+      () => (reachable ? buildShlinkApiClient(selectedServer) : undefined),
+      [buildShlinkApiClient, reachable, selectedServer],
+    );
+    const createNotFound = useCallback(
+      (nonPrefixedHomePath: string) => (
+        <NotFound to={`${routesPrefix}${nonPrefixedHomePath}`}>List short URLs</NotFound>
+      ),
+      [routesPrefix],
+    );
 
-      // ShlinkWebComponent re-creates its whole store when the apiClient prop changes identity, so
-      // these references must stay stable across re-renders not caused by a server switch. Creating
-      // them inline would wipe all cached state on every un-related re-render.
-      const apiClient = useMemo(
-        () => buildShlinkApiClient(selectedServer),
-        [buildShlinkApiClient, selectedServer],
-      );
-      const createNotFound = useCallback(
-        (nonPrefixedHomePath: string) => (
-          <NotFound to={`${routesPrefix}${nonPrefixedHomePath}`}>List short URLs</NotFound>
-        ),
-        [routesPrefix],
-      );
+    if (!reachable) {
+      return <ServerError />;
+    }
 
-      return (
-        <ShlinkSidebarVisibilityProvider>
-          <ShlinkSidebarToggleButton className="fixed top-3.5 left-3 z-901" />
-          <ShlinkWebComponent
-            serverVersion={selectedServer.version}
-            apiClient={apiClient}
-            settings={settings}
-            routesPrefix={routesPrefix}
-            tagColorsStorage={tagColorsStorage}
-            createNotFound={createNotFound}
-            autoSidebarToggle={false}
-          />
-        </ShlinkSidebarVisibilityProvider>
-      );
-    },
-  );
+    return (
+      <ShlinkSidebarVisibilityProvider>
+        <ShlinkSidebarToggleButton className="fixed top-3.5 left-3 z-901" />
+        <ShlinkWebComponent
+          serverVersion={selectedServer.version}
+          apiClient={apiClient!}
+          settings={settings}
+          onSettingsUpdate={setSettings}
+          routesPrefix={routesPrefix}
+          tagColorsStorage={tagColorsStorage}
+          createNotFound={createNotFound}
+          autoSidebarToggle={false}
+        />
+      </ShlinkSidebarVisibilityProvider>
+    );
+  },
+);
 
 export const ShlinkWebComponentContainer = withDependencies(ShlinkWebComponentContainerBase, [
   'buildShlinkApiClient',

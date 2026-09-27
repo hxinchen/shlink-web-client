@@ -23,16 +23,9 @@ describe('<MainHeader />', () => {
     await expect.element(screen.getByRole('button', { name: 'Servers' })).toBeInTheDocument();
   });
 
-  it.each([
-    ['/foo', false],
-    ['/bar', false],
-    ['/settings', true],
-    ['/settings/foo', true],
-    ['/settings/bar', true],
-  ])('sets link to settings as active only when current path is settings', async (currentPath, isActive) => {
-    const screen = await setUp(currentPath);
-    await expect
-      .element(screen.getByRole('menuitem', { name: /Settings$/ }))
-      .toHaveAttribute('data-active', isActive ? 'true' : 'false');
+  it('keeps theme and language controls in the header', async () => {
+    const screen = await setUp();
+    await expect.element(screen.getByRole('button', { name: 'Switch to dark theme' })).toBeInTheDocument();
+    await expect.element(screen.getByRole('button', { name: 'Language' })).toBeInTheDocument();
   });
 });

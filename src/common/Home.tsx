@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Card } from '@shlinkio/shlink-frontend-kit';
 import { clsx } from 'clsx';
 import type { FC } from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router';
+import { useEffect, useMemo, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router';
 import { useTranslation } from '../i18n/useTranslation';
 import { withoutSelectedServer } from '../servers/helpers/withoutSelectedServer';
 import { useServers } from '../servers/reducers/servers';
@@ -13,18 +13,25 @@ import { ShlinkLogo } from './img/ShlinkLogo';
 
 export const Home: FC = withoutSelectedServer(() => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { t } = useTranslation();
   const { servers } = useServers();
-  const serversList = Object.values(servers);
+  const serversList = useMemo(() => Object.values(servers), [servers]);
+  const hasNavigated = useRef(false);
   const hasServers = serversList.length > 0;
 
   useEffect(() => {
-    // Try to redirect to the first server marked as auto-connect
-    const autoConnectServer = serversList.find(({ autoConnect }) => autoConnect);
-    if (autoConnectServer) {
-      navigate(`/server/${autoConnectServer.id}`);
+    // A single configured server is the normal self-hosted setup, so take the user directly to
+    // its dashboard. Keep the selector for installations that manage multiple servers.
+    const serverToOpen = serversList.length === 1
+      ? serversList[0]
+      : serversList.find(({ autoConnect }) => autoConnect);
+    const targetPath = serverToOpen ? `/server/${serverToOpen.id}` : undefined;
+    if (targetPath && pathname !== targetPath && !hasNavigated.current) {
+      hasNavigated.current = true;
+      navigate(targetPath);
     }
-  }, [serversList, navigate]);
+  }, [serversList, navigate, pathname]);
 
   return (
     <div className="px-3 w-full">
@@ -38,7 +45,7 @@ export const Home: FC = withoutSelectedServer(() => {
 
           <div className="md:border-l border-lm-border dark:border-dm-border flex-grow">
             <h1 className={clsx('p-6 text-left border-lm-border dark:border-dm-border', { 'border-b': !hasServers })}>
-              {t('Welcome!')}
+              {hasServers ? t('Please, select a server.') : t('Welcome!')}
             </h1>
             {hasServers ? (
               <ServersListGroup servers={serversList} />

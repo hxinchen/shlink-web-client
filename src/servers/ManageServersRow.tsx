@@ -36,10 +36,10 @@ export const ManageServersRow: FC<ManageServersRowProps> = ({ server, hasAutoCon
       <Table.Cell className="font-bold" columnName={t('Name')}>
         <Link to={`/server/${server.id}`}>{server.name}</Link>
       </Table.Cell>
-      <Table.Cell columnName={t('Base URL')} className="max-lg:border-b-0">
-        {server.url}
+      <Table.Cell columnName={t('Base URL')} className="max-lg:border-b-0 break-all">
+        {server.url || <span aria-hidden="true">&nbsp;</span>}
       </Table.Cell>
-      <Table.Cell className="text-right max-lg:absolute right-0 -top-1 mx-lg:pt-0">
+      <Table.Cell className="text-right max-lg:absolute right-0 -top-1 max-lg:pt-0">
         <ManageServersRowDropdown server={server} />
       </Table.Cell>
     </Table.Row>

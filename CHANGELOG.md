@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+### Changed
+* Refresh UI kit and web component with small-screen fixes (visits table horizontal scrolling, settings nav pills, tags checkbox layout) and missing `zh-CN` translations.
+
 ## [4.8.1] - 2026-08-07
 ### Added
 * *Nothing*

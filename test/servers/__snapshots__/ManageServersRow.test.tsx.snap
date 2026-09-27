@@ -49,13 +49,13 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
           </a>
         </td>
         <td
-          class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1 max-lg:border-b-0"
+          class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1 max-lg:border-b-0 break-all"
           data-column="Base URL"
         >
           https://example.com
         </td>
         <td
-          class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1 text-right max-lg:absolute right-0 -top-1 mx-lg:pt-0"
+          class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1 text-right max-lg:absolute right-0 -top-1 max-lg:pt-0"
         >
           <div
             class="relative inline-block"
@@ -125,13 +125,13 @@ exports[`<ManageServersRow /> > renders auto-connect icon only if server is auto
           </a>
         </td>
         <td
-          class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1 max-lg:border-b-0"
+          class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1 max-lg:border-b-0 break-all"
           data-column="Base URL"
         >
           https://example.com
         </td>
         <td
-          class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1 text-right max-lg:absolute right-0 -top-1 mx-lg:pt-0"
+          class="border-lm-border dark:border-dm-border p-2 block lg:table-cell not-last:border-b-1 lg:border-b-1 before:lg:hidden before:content-[attr(data-column)] before:font-bold before:mr-1 text-right max-lg:absolute right-0 -top-1 max-lg:pt-0"
         >
           <div
             class="relative inline-block"
